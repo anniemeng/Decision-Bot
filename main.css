@@ -1,0 +1,11 @@
+#options-list li.editing .view {
+	display: none;
+}
+
+#options-list li .edit {
+	display: none;
+}
+
+#options-list li {
+	list-style-type:none;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	
+	<title>Decision Maker</title>
+	
+	<!--CSS-->
+	<link rel="stylesheet" href="main.css">
+	
+	<!--JS-->
+	<!--TEMPLATES-->
+	<script type="text/template" id="display-choices">
+		<span id="count"> Currently <%= total %> <%= total === 1 ? 'option' : 'options' %>
+		</span>
+		<button type="button" id="clear-all">Clear all</button>
+	</script>
+	<script type="text/template" id="item-view">
+		<div class="view">
+      <label> 
+				<%= title %>
+			</label>
+			<button class="editbtn">Edit</button>
+      <button class="destroy">Delete</button>
+    </div>
+		<input class="edit" value="<%= title %>">
+	</script>
+	<script type="text/template" id="result-disp">
+		<div class="result">
+		Verdict: <%= resultTxt %>
+		</div>
+		<button type="button" class="restart">Restart</button>
+	</script>
+	<!--IMPORTS-->
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.9/backbone.localStorage-min.js"></script>
+	<script src="js/option.js"></script>
+	<script src="js/optionList.js"></script>
+	<script src="js/choicesView.js"></script>
+	<script src="js/optionView.js"></script>
+	<!--<script src="js/resultView.js"></script>-->
+	<script src="js/app.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1> Decisions, decisions ... </h1>
+	</header>
+	<section id="inputting">
+		<input id="new-option" placeholder="Type your indecisions away" autofocus>
+		<section id="choices"></section>
+		<section id="disp"></section>
+	<section id="submitting">
+		<span id="result-choice"></span>Get result as:
+		<form>
+		<input type="radio" name= "result" value="single" checked="checked">Single choice
+		<input type="radio" name="result" value="order">Choices in order 
+		<button type="button"class="send">Get your decision</button>
+		</form>
+	</section>
+	<section id="list">
+		<ul id="options-list"></ul>
+	</section>
+  </section>
+</body>
