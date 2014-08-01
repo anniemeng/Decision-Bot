@@ -10,6 +10,10 @@
 	<link rel="stylesheet" href="css/normalize.css">
   <!--SCSS compiled-->
 	<link rel="stylesheet" href="css/main.css">
+	<script src="js/style.js"></script>
+	<!--FONTS-->
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,700|Raleway:400,300' rel='stylesheet' type='text/css'>
 	
 	<!--JS-->
 	<!--TEMPLATES-->
@@ -51,20 +55,23 @@
 <body>
 	<section id="inputting">
 	<header>
-		<h1> Decisions, decisions ... </h1>
+		<h1> Decision Bot </h1>
 		<img id="icon" src="http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png"></img>
 	</header>
-		<input id="new-option" placeholder="Type your indecisions away" autofocus>
-		<section id="choices"></section>
+		<input type="text" id="new-option" placeholder="Type your indecisions away" autofocus>
 		<section id="disp"></section>
-	<section id="submitting">
-		<span id="result-choice"></span>Get result as:
-		<form>
-		<input type="radio" name="result" value="single" checked="checked">Single choice
-		<input type="radio" name="result" value="order">Ordered choice 
-		<button type="button"class="send">Get your decision</button>
-		</form>
-	</section>
+	<div id="panel">
+		<section id="submitting">
+			<form>			
+				<div id="result-choice"></div>Give me a
+				<input type="radio" name="result" value="single" checked="checked">single
+				<input type="radio" name="result" value="order">ordered
+				<button type="button"class="send">Decision</button>
+			</form>
+		</section>
+		<section id="choices"></section>
+	
+	</div>
 	<section id="list">
 		<ul id="options-list"></ul>
 	</section>

@@ -1,31 +1,119 @@
-/*TOP*/
+/*VARIABLES*/
 $nice-blue: #8DE9F7;
+$grey: #535755;
 $main-font: #fff;
 
+$fontcab: 'Cabin', sans-serif;
+$fontsrc: 'Source Sans Pro', sans-serif;
+$fontral: 'Raleway', sans-serif;
+
+/*MIXINS*/
+@mixin placeholder() {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder {@content}
+	&::-moz-placeholder {@content}
+	&:-ms-input-placeholder {@content}
+}
+
+@mixin border-radius($rad) {
+	-webkit-border-radius:$rad;
+	-moz-border-radius:$rad;
+	-ms-border-radius:$rad;
+	border-radius:$rad;
+}
+
+body {
+	background-color:$nice-blue;
+	text-align:center;
+	font-family: $fontsrc;
+	font-weight:200;
+	color:$main-font;
+}
+
+/*TOP*/
+
 header {
-	background-color: $nice-blue;
+	background-color: $grey;
   color: $main-font;
-  text-align: center;
-  padding: 30px 0 100px;
+  padding: 5px 0 50px;
   margin-top:0;
   margin-bottom:50px;
 }
 
-body {
-	text-align:center;
+h1 {
+	font-family: $fontral;
+	font-size:100px;
+	font-weight:700;
+}
+
+img {
+ 	width:10%;
+	height:10%;
+}
+
+/*INPUT*/
+#new-option {
+	@include placeholder {
+		color:$main-font;
+		font-size:45px;
+	}
+  background: none;
+  font-size: 45px;
+  outline: none;
+  border: none;
+	margin-bottom: 10px;
+	width:40%;
+	border-bottom: 1px solid $main-font;
+	padding: 10px 10px;
+}
+
+.edit {
+	margin: 0;
+	background: none;
+	font-size: 15px;
+	outline: none;
+	border: none;
+}
+
+/*CHOICES*/
+
+form {
+	color:$grey;
+	display:inline;
+	letter-spacing:0.1em;
+}
+
+/**RADIO BUTTONS**/
+input[type="radio"] {
+
 }
 
 
-#options-list li.editing .view {
-	display: none;
+
+#choices {
+	margin-top:50px;
 }
 
-#options-list li .edit {
-	display: none;
+#options-list {
+	li {
+		list-style-type:none;
+		
+		.edit {
+			display: none;
+		}
+	}
+	
+	li.editing .view {
+		display: none;
+	}
+	
 }
 
-#options-list li {
-	list-style-type:none;
+button {
+	@include border-radius(3px);
+	background-color:black;
+	border: 0 none;
+	color: $main-font;
 }
 	
 
