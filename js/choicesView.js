@@ -18,7 +18,6 @@ app.viewChoices = Backbone.View.extend( {
 		this.$added = this.$('#new-option');
 		this.$choices = this.$('#choices');	
 		this.$submit = this.$('#submitting');
-		//this.$radio = this.$('input[name=result]');
 		this.$disp = this.$('#disp');
 		this.$list = this.$('#list');
 		this.listenTo(app.opts, 'add', this.addOpt);
@@ -39,12 +38,17 @@ app.viewChoices = Backbone.View.extend( {
 		}
 		
 		else if ((total > 0) && this.bool) {
+			//hide everything else
 			this.$choices.hide();
 			this.$submit.hide();
 			this.$added.hide();
 			this.$list.hide();			
+			
+			//get random choice
 			var resultChoice = $('input[name=result]:checked').val();
 			console.log(resultChoice);
+			
+			//single output
 			if (resultChoice === "single") {
 				var random = Math.floor(Math.random() * app.opts.length);	
 				var chosen = app.opts.at(random).get("title");
@@ -53,6 +57,7 @@ app.viewChoices = Backbone.View.extend( {
 				}));	
 			}
 			
+			//ordered output
 			else if (resultChoice === "order") {
 				var shuffled = _.shuffle(app.opts.toArray());
 				var chosen = "<br>";

@@ -7,11 +7,12 @@ app.viewOptions = Backbone.View.extend( {
 	template: _.template( $('#item-view').html() ),
 	
 	events: {
-		'click label': 'showMenu',
+		//'click label': 'showMenu',
 		'click .editbtn': 'edit',
 		'keypress .edit': 'enterEdit',
 		'click .destroy': 'clearOne',
 		'blur .edit': 'leave',
+		
 	},
 	
 	initialize: function() {
@@ -24,15 +25,18 @@ app.viewOptions = Backbone.View.extend( {
 	render: function() {
 		this.$el.html( this.template ( this.model.attributes ));
 		this.$edits = this.$('.edit');
-		this.$edit.hide();
-		this.$deletion.hide();
+		//this.$edit.hide();
+		//this.$deletion.hide();
 		return this;
 	},
 	
-	showMenu: function() {
-		this.model.$edit.show();
-		this.model.$deletion.show();
-	},
+	/*
+	showMenu: function(e) {
+		var id = $(e.currentTarget).data("id");
+		console.log(id);
+		this.$edit.show();
+		this.$deletion.show();
+	},*/
 	
 	edit: function() {
 		this.$el.addClass('editing');
@@ -60,8 +64,12 @@ app.viewOptions = Backbone.View.extend( {
 		else { 
 			this.clearOne();
 		}
-	  		this.$el.removeClass('editing');
-				this.$edits.hide();
-	},
+		
+		this.$el.removeClass('editing');
+		this.$edits.hide();
+		//this.$edit.hide();
+		//this.$deletion.hide();
+				
+	}
 		
 });
