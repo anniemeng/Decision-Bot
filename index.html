@@ -7,6 +7,7 @@
 	<title>Decision Maker</title>
 	
 	<!--CSS-->
+	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="main.css">
 	
 	<!--JS-->
@@ -18,9 +19,10 @@
 	</script>
 	<script type="text/template" id="item-view">
 		<div class="view">
-      <label> 
+      <label data-id=<%= id %>> 
 				<%= title %>
 			</label>
+			<br>
 			<button type="button" class="editbtn">Edit</button>
       <button type="button" class="destroy">Delete</button>
     </div>
