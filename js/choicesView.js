@@ -18,7 +18,7 @@ app.viewChoices = Backbone.View.extend( {
 		this.$added = this.$('#new-option');
 		this.$choices = this.$('#choices');	
 		this.$submit = this.$('#submitting');
-		this.$radio = this.$('input[name=result]:checked');
+		//this.$radio = this.$('input[name=result]');
 		this.$disp = this.$('#disp');
 		this.$list = this.$('#list');
 		this.listenTo(app.opts, 'add', this.addOpt);
@@ -39,21 +39,29 @@ app.viewChoices = Backbone.View.extend( {
 		}
 		
 		else if ((total > 0) && this.bool) {
-			var resultChoice = this.$radio.val();
+			this.$choices.hide();
+			this.$submit.hide();
+			this.$added.hide();
+			this.$list.hide();			
+			var resultChoice = $('input[name=result]:checked').val();
+			console.log(resultChoice);
 			if (resultChoice === "single") {
 				var random = Math.floor(Math.random() * app.opts.length);	
 				var chosen = app.opts.at(random).get("title");
 				this.$disp.html(this.resultTemplate( {
 					resultTxt: chosen
 				}));	
-				this.$choices.hide();
-				this.$submit.hide();
-				this.$added.hide();
-				this.$list.hide();
 			}
 			
 			else if (resultChoice === "order") {
-				
+				var shuffled = _.shuffle(app.opts.toArray());
+				var chosen = "<br>";
+				for (var i = 0; i < shuffled.length; i++) {
+					chosen = chosen + (i+1) + ". " + shuffled[i].get("title") + "<br>";
+				}
+				this.$disp.html(this.resultTemplate( {
+					resultTxt: chosen
+				}));	
 			}
 		}
 
