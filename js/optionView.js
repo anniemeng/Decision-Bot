@@ -7,19 +7,16 @@ app.viewOptions = Backbone.View.extend( {
 	template: _.template( $('#item-view').html() ),
 	
 	events: {
-		'mouseenter label': 'showEdit',
-		'mouseleave label': 'hideEdit',
+		'click label': 'showMenu',
 		'click .editbtn': 'edit',
 		'keypress .edit': 'enterEdit',
 		'click .destroy': 'clearOne',
 		'blur .edit': 'leave',
 	},
 	
-	initialize: function(opt) {
-		this.vent = opt.vent;
+	initialize: function() {
 		this.$edit = $('.editbtn');
 		this.$deletion = $('.destroy');
-		
 		this.listenTo(this.model, 'change', this.render);
 		this.listenTo(this.model, 'destroy', this.remove);
 	},
@@ -27,17 +24,14 @@ app.viewOptions = Backbone.View.extend( {
 	render: function() {
 		this.$el.html( this.template ( this.model.attributes ));
 		this.$edits = this.$('.edit');
+		this.$edit.hide();
+		this.$deletion.hide();
 		return this;
 	},
 	
-	showEdit: function() {
-		this.$edit.show();
-		this.$deletion.show();
-	},
-	
-	hideEdit: function() {
-		this.$edit.hide();
-		this.$deletion.hide();
+	showMenu: function() {
+		this.model.$edit.show();
+		this.model.$deletion.show();
 	},
 	
 	edit: function() {
