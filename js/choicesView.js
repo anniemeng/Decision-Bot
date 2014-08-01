@@ -89,6 +89,7 @@ app.viewChoices = Backbone.View.extend( {
     	app.opts.at(0).destroy(); 
 		}
 		//change back to original img
+		this.count=0;
 		this.$image.attr('src',"http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png");
 		return false;
 	},
