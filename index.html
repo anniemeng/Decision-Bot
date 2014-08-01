@@ -18,7 +18,7 @@
 	<!--JS-->
 	<!--TEMPLATES-->
 	<script type="text/template" id="display-choices">
-		<span id="count"> Currently <%= total %> <%= total === 1 ? 'option' : 'options' %>
+		<span id="count"> Currently   <span id="num"><%= total %></span> <%= total === 1 ? 'option' : 'options' %>
 		</span>
 		<button type="button" id="clear-all">Clear all</button>
 	</script>
@@ -54,26 +54,29 @@
 
 <body>
 	<section id="inputting">
-	<header>
-		<h1> Decision Bot </h1>
-		<img id="icon" src="http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png"></img>
-	</header>
-		<input type="text" id="new-option" placeholder="Type your indecisions away" autofocus>
+		<header>
+			<h1> Decision Bot </h1>
+			<img id="icon" src="http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png"></img>
+		</header>
+	  <section id="choices"></section>
+		<input type="text" id="new-option" placeholder="Type your indecisions away" maxlength="50" autofocus>
 		<section id="disp"></section>
-	<div id="panel">
-		<section id="submitting">
-			<form>			
-				<div id="result-choice"></div>Give me a
-				<input type="radio" name="result" value="single" checked="checked">single
-				<input type="radio" name="result" value="order">ordered
-				<button type="button"class="send">Decision</button>
-			</form>
-		</section>
-		<section id="choices"></section>
-	
-	</div>
-	<section id="list">
+		<div id="panel">
+			
+			<section id="submitting">
+				<form>			
+					<div id="result-choice"></div>Give me a
+						<input type="radio" class="radio" id="one" name="result" value="single" checked="checked">
+							<label for="one" class="radio-label">single</label>
+						<input type="radio" class="radio" id="two" name="result" value="order">
+							<label for="two" class="radio-label">ordered</label>
+					<button type="button"class="send">Decision</button>
+				</form>
+			</section>
+			
+		</div>
+		<section class="list">
 		<ul id="options-list"></ul>
-	</section>
+		</section>
   </section>
 </body>

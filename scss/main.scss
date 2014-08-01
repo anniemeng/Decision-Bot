@@ -1,3 +1,4 @@
+@import 'compass/css3';
 /*VARIABLES*/
 $nice-blue: #8DE9F7;
 $grey: #535755;
@@ -37,21 +38,24 @@ header {
   color: $main-font;
   padding: 5px 0 50px;
   margin-top:0;
-  margin-bottom:50px;
+  margin-bottom:0px;
 }
 
 h1 {
 	font-family: $fontral;
 	font-size:100px;
 	font-weight:700;
+	margin-bottom:10px;
 }
 
 img {
+	margin-top:10px;
  	width:10%;
 	height:10%;
 }
 
-/*INPUT*/
+
+/*****INPUT*****/
 #new-option {
 	@include placeholder {
 		color:$main-font;
@@ -61,7 +65,8 @@ img {
   font-size: 45px;
   outline: none;
   border: none;
-	margin-bottom: 10px;
+	margin-top:0.5em;
+	margin-bottom: 0.2em;
 	width:40%;
 	border-bottom: 1px solid $main-font;
 	padding: 10px 10px;
@@ -75,7 +80,11 @@ img {
 	border: none;
 }
 
+
 /*CHOICES*/
+#submitting {
+	margin-bottom:5em;
+}
 
 form {
 	color:$grey;
@@ -83,20 +92,45 @@ form {
 	letter-spacing:0.1em;
 }
 
-/**RADIO BUTTONS**/
-input[type="radio"] {
-
-}
-
-
-
 #choices {
-	margin-top:50px;
+	margin-top:0px;
+	font-size:20px;
+	margin-bottom:1em;
+	background:$grey;
+	padding-bottom:1em;
+	letter-spacing:0.1em;
 }
 
+#num {
+	color:$nice-blue;
+	font-weight:bold;
+}
+
+/**BUTTONS**/
+button {
+	@include border-radius(3px);
+	background-color:black;
+	border: 0 none;
+	color: $main-font;
+	font-size:15px;
+}
+
+
+
+
+/*****LIST*****/
 #options-list {
 	li {
+		@include border-radius(5px);
 		list-style-type:none;
+		font-size:30px;
+		background-color:rgba(255,255,255, 0.3);
+		position: relative;
+		display: block;
+		padding:0.2em;
+    margin:1em 10em;
+		margin-top:0;
+		text-decoration: none;
 		
 		.edit {
 			display: none;
@@ -107,13 +141,21 @@ input[type="radio"] {
 		display: none;
 	}
 	
+	input {
+		font-size:30px;
+	}
+	
 }
 
-button {
-	@include border-radius(3px);
-	background-color:black;
-	border: 0 none;
-	color: $main-font;
+/***DECISION***/
+.result {
+	margin-top:50px;
+	font-size:50px;
+}
+
+.restart {
+	margin-top: 10px;
+	margin-bottom:10px;
 }
 	
 

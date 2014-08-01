@@ -21,7 +21,7 @@ app.viewChoices = Backbone.View.extend( {
 		this.$choices = this.$('#choices');	
 		this.$submit = this.$('#submitting');
 		this.$disp = this.$('#disp');
-		this.$list = this.$('#list');
+		this.$list = this.$('.list');
 		this.listenTo(app.opts, 'add', this.addOpt);
 		this.listenTo(app.opts, 'reset', this.addOpts);
 		this.listenTo(app.opts, 'all', this.render);
