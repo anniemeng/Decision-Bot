@@ -15,6 +15,8 @@ app.viewChoices = Backbone.View.extend( {
 	
 	initialize: function() {
 		this.bool = false;
+		this.count = 0;
+		this.$image = this.$('#icon');
 		this.$added = this.$('#new-option');
 		this.$choices = this.$('#choices');	
 		this.$submit = this.$('#submitting');
@@ -23,6 +25,7 @@ app.viewChoices = Backbone.View.extend( {
 		this.listenTo(app.opts, 'add', this.addOpt);
 		this.listenTo(app.opts, 'reset', this.addOpts);
 		this.listenTo(app.opts, 'all', this.render);
+		Backbone.on("subCount", this.subCount, this);
 		app.opts.fetch();
 	},
 	
@@ -43,6 +46,9 @@ app.viewChoices = Backbone.View.extend( {
 			this.$submit.hide();
 			this.$added.hide();
 			this.$list.hide();			
+			
+			//change to happy img 
+			this.$image.attr('src',"http://www.smilys.net/riesige_smilies/smiley5102.gif");
 			
 			//get random choice
 			var resultChoice = $('input[name=result]:checked').val();
@@ -82,6 +88,8 @@ app.viewChoices = Backbone.View.extend( {
 		while(app.opts.length) { 
     	app.opts.at(0).destroy(); 
 		}
+		//change back to original img
+		this.$image.attr('src',"http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png");
 		return false;
 	},
 	
@@ -100,8 +108,31 @@ app.viewChoices = Backbone.View.extend( {
 		this.$added.val('');
 	}, 
 	
+	changeImg: function() {
+		//original
+		if (this.count===0) {
+			this.$image.attr('src',"http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png");
+		}
+		
+		else if (this.count % 2 === 0) {
+			this.$image.attr('src',"http://upload.wikimedia.org/wikipedia/en/f/f5/Question_mark.PNG");
+		}
+		
+		else if (this.count % 2 === 1) {
+			this.$image.attr('src',"http://www.clipartbest.com/cliparts/4ib/A64/4ibA64big.png");
+		}
+	},
+	
+	subCount: function() {
+		this.count--;
+		this.changeImg();
+	},
+	
 	addOpt: function( newOpt ) {
 		var view = new app.viewOptions({ model: newOpt});
+		//change image
+		this.count++;
+		this.changeImg();
 		$('#options-list').append( view.render().el );
 	},
 	

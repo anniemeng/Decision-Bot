@@ -16,6 +16,7 @@ app.viewOptions = Backbone.View.extend( {
 	},
 	
 	initialize: function() {
+		this.$image = this.$('#icon');
 		this.$edit = $('.editbtn');
 		this.$deletion = $('.destroy');
 		this.listenTo(this.model, 'change', this.render);
@@ -52,6 +53,7 @@ app.viewOptions = Backbone.View.extend( {
 	
 	clearOne: function() {
 		this.model.destroy();
+		Backbone.trigger("subCount");
 	},
 	
 	leave: function() {
