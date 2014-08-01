@@ -1,0 +1,31 @@
+/*TOP*/
+$nice-blue: #8DE9F7;
+$main-font: #fff;
+
+header {
+	background-color: $nice-blue;
+  color: $main-font;
+  text-align: center;
+  padding: 30px 0 100px;
+  margin-top:0;
+  margin-bottom:50px;
+}
+
+body {
+	text-align:center;
+}
+
+
+#options-list li.editing .view {
+	display: none;
+}
+
+#options-list li .edit {
+	display: none;
+}
+
+#options-list li {
+	list-style-type:none;
+}
+	
+
