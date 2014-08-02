@@ -20,16 +20,17 @@
 	<script type="text/template" id="display-choices">
 		<span id="count"> Currently   <span id="num"><%= total %></span> <%= total === 1 ? 'option' : 'options' %>
 		</span>
-		<button type="button" id="clear-all">Clear all</button>
+		<button type="button" class="clear-all">x</button>
 	</script>
 	<script type="text/template" id="item-view">
 		<div class="view">
       <label> 
 				<%= title %>
 			</label>
-			<br>
+			<div class="btns">
 			<button type="button" class="editbtn">Edit</button>
       <button type="button" class="destroy">Delete</button>
+			</div>
     </div>
 		<input class="edit" value="<%= title %>">
 	</script>
@@ -65,12 +66,12 @@
 			
 			<section id="submitting">
 				<form>			
-					<div id="result-choice"></div>Give me a
+					<div id="result-choice"></div>Give me a(n)
 						<input type="radio" class="radio" id="one" name="result" value="single" checked="checked">
-							<label for="one" class="radio-label">single</label>
+							<label for="one" class="radio-label"><span>single</span></label>
 						<input type="radio" class="radio" id="two" name="result" value="order">
-							<label for="two" class="radio-label">ordered</label>
-					<button type="button"class="send">Decision</button>
+							<label for="two" class="radio-label"><span>ordered</span></label>
+					<button type="button"class="send">DECISION</button>
 				</form>
 			</section>
 			

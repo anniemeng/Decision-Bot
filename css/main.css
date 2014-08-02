@@ -1,6 +1,6 @@
 /*VARIABLES*/
 /*MIXINS*/
-/* line 26, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 body {
   background-color: #8de9f7;
   text-align: center;
@@ -10,7 +10,7 @@ body {
 }
 
 /*TOP*/
-/* line 36, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 header {
   background-color: #535755;
   color: white;
@@ -19,7 +19,7 @@ header {
   margin-bottom: 0px;
 }
 
-/* line 44, ../scss/main.scss */
+/* line 50, ../scss/main.scss */
 h1 {
   font-family: "Raleway", sans-serif;
   font-size: 100px;
@@ -27,7 +27,7 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* line 51, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 img {
   margin-top: 10px;
   width: 10%;
@@ -35,7 +35,7 @@ img {
 }
 
 /*****INPUT*****/
-/* line 59, ../scss/main.scss */
+/* line 65, ../scss/main.scss */
 #new-option {
   background: none;
   font-size: 45px;
@@ -43,7 +43,7 @@ img {
   border: none;
   margin-top: 0.5em;
   margin-bottom: 0.2em;
-  width: 40%;
+  width: 39%;
   border-bottom: 1px solid white;
   padding: 10px 10px;
 }
@@ -68,7 +68,7 @@ img {
   font-size: 45px;
 }
 
-/* line 75, ../scss/main.scss */
+/* line 81, ../scss/main.scss */
 .edit {
   margin: 0;
   background: none;
@@ -78,19 +78,19 @@ img {
 }
 
 /*CHOICES*/
-/* line 85, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 #submitting {
   margin-bottom: 5em;
 }
 
-/* line 89, ../scss/main.scss */
+/* line 95, ../scss/main.scss */
 form {
   color: #535755;
   display: inline;
   letter-spacing: 0.1em;
 }
 
-/* line 95, ../scss/main.scss */
+/* line 101, ../scss/main.scss */
 #choices {
   margin-top: 0px;
   font-size: 20px;
@@ -100,63 +100,174 @@ form {
   letter-spacing: 0.1em;
 }
 
-/* line 104, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 #num {
   color: #8de9f7;
   font-weight: bold;
 }
 
 /**BUTTONS**/
-/* line 110, ../scss/main.scss */
-button {
+/* line 116, ../scss/main.scss */
+button.clear-all {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background: white;
+  color: #535755;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 132, ../scss/main.scss */
+.clear-all:hover {
+  color: #8de9f7;
+}
+
+/* line 136, ../scss/main.scss */
+.radio-label {
+  cursor: pointer;
+}
+
+/* line 140, ../scss/main.scss */
+input[type="radio"] {
+  display: none;
+}
+
+/* line 144, ../scss/main.scss */
+input[type="radio"] + .radio-label:before {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background: #535755;
+  color: white;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.1em;
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+}
+
+/* line 157, ../scss/main.scss */
+input[type=radio]:checked + label:before {
+  content: "\2022";
+  color: #8de9f7;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 0.8em;
+}
+
+/* line 166, ../scss/main.scss */
+.send, .restart {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  background: white;
+  color: #535755;
+  padding: 0.4em;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* line 176, ../scss/main.scss */
+.send:after, .restart:after {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background: #535755;
+  color: white;
+  content: ">";
+  display: inline-block;
+  height: 25px;
+  line-height: 1.5em;
+  margin-left: 0.5em;
+  text-align: center;
+  width: 25px;
+}
+
+/* line 189, ../scss/main.scss */
+.send:hover, .send:hover:after, .restart:hover:after, .restart:hover {
+  color: #8de9f7;
+}
+
+/* line 197, ../scss/main.scss */
+.btns {
+  margin-top: 0px;
+  display: block;
+  padding-bottom: 0.4em;
+}
+
+/* line 203, ../scss/main.scss */
+.editbtn, .destroy {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px;
-  background-color: black;
+  font-size: 10px;
+  background-color: #8de9f7;
   border: 0 none;
-  color: white;
-  font-size: 15px;
+  margin-top: 0px;
+  outline: none;
+}
+
+/* line 212, ../scss/main.scss */
+.editbtn:hover, .destroy:hover {
+  color: #535755;
 }
 
 /*****LIST*****/
-/* line 123, ../scss/main.scss */
+/* line 230, ../scss/main.scss */
 #options-list li {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
   list-style-type: none;
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.3);
   position: relative;
   display: block;
-  padding: 0.2em;
-  margin: 1em 10em;
-  margin-top: 0;
   text-decoration: none;
+  padding-top: 0.4em;
+  margin: 1em 10em;
+  margin-bottom: 0px;
 }
-/* line 135, ../scss/main.scss */
+/* line 242, ../scss/main.scss */
 #options-list li .edit {
   display: none;
+  padding-bottom: 0.4em;
 }
-/* line 140, ../scss/main.scss */
+/* line 248, ../scss/main.scss */
 #options-list li.editing .view {
   display: none;
 }
-/* line 144, ../scss/main.scss */
+/* line 252, ../scss/main.scss */
 #options-list input {
   font-size: 30px;
 }
 
 /***DECISION***/
-/* line 151, ../scss/main.scss */
+/* line 259, ../scss/main.scss */
 .result {
   margin-top: 50px;
   font-size: 50px;
 }
 
-/* line 156, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 .restart {
   margin-top: 10px;
   margin-bottom: 10px;

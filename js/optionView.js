@@ -26,21 +26,14 @@ app.viewOptions = Backbone.View.extend( {
 	render: function() {
 		this.$el.html( this.template ( this.model.attributes ));
 		this.$edits = this.$('.edit');
-		//this.$edit.hide();
-		//this.$deletion.hide();
 		return this;
 	},
 	
-	/*
-	showMenu: function(e) {
-		var id = $(e.currentTarget).data("id");
-		console.log(id);
-		this.$edit.show();
-		this.$deletion.show();
-	},*/
-	
 	edit: function() {
 		this.$el.addClass('editing');
+		var temp = this.$edits.val();
+		this.$edits.val('');
+		this.$edits.val(temp);
 		this.$edits.show();
 		this.$edits.focus();
 	},
@@ -69,8 +62,6 @@ app.viewOptions = Backbone.View.extend( {
 		
 		this.$el.removeClass('editing');
 		this.$edits.hide();
-		//this.$edit.hide();
-		//this.$deletion.hide();
 				
 	}
 		

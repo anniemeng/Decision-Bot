@@ -7,7 +7,7 @@ app.viewChoices = Backbone.View.extend( {
 	resultTemplate: _.template( $('#result-disp').html() ),
 	
 	events: {
-		'click #clear-all': 'clear',
+		'click .clear-all': 'clear',
 		'keypress #new-option': 'enterCreate',
 		'click .send': 'result',
 		'click .restart': 'refresh'
@@ -16,6 +16,7 @@ app.viewChoices = Backbone.View.extend( {
 	initialize: function() {
 		this.bool = false;
 		this.count = 0;
+		this.$def = this.$("#one");
 		this.$image = this.$('#icon');
 		this.$added = this.$('#new-option');
 		this.$choices = this.$('#choices');	
@@ -52,7 +53,6 @@ app.viewChoices = Backbone.View.extend( {
 			
 			//get random choice
 			var resultChoice = $('input[name=result]:checked').val();
-			console.log(resultChoice);
 			
 			//single output
 			if (resultChoice === "single") {
@@ -61,6 +61,7 @@ app.viewChoices = Backbone.View.extend( {
 				this.$disp.html(this.resultTemplate( {
 					resultTxt: chosen
 				}));	
+				
 			}
 			
 			//ordered output
@@ -152,6 +153,9 @@ app.viewChoices = Backbone.View.extend( {
 		this.clear();
 		this.$disp.html(null);
 		this.render();
+		this.$added.val('');
+		this.$added.focus();
+		this.$def.prop("checked", true);
 	}
 
 });

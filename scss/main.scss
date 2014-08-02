@@ -23,6 +23,12 @@ $fontral: 'Raleway', sans-serif;
 	border-radius:$rad;
 }
 
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+  box-shadow:$top $left $blur $color #{$inset};
+}
+
 body {
 	background-color:$nice-blue;
 	text-align:center;
@@ -67,7 +73,7 @@ img {
   border: none;
 	margin-top:0.5em;
 	margin-bottom: 0.2em;
-	width:40%;
+	width:39%;
 	border-bottom: 1px solid $main-font;
 	padding: 10px 10px;
 }
@@ -107,33 +113,135 @@ form {
 }
 
 /**BUTTONS**/
-button {
-	@include border-radius(3px);
-	background-color:black;
-	border: 0 none;
-	color: $main-font;
-	font-size:15px;
+button.clear-all {
+	@include border-radius(50%);
+	background: $main-font;
+	color: $grey;
+	text-decoration: none;
+	border:none;
+	outline:none;
+	vertical-align:middle;
+	text-align:center;
+	line-height:5px;
+	font-size:13px;
+	font-weight:bold;
+	width:20px;
+	height:20px;
 }
 
+.clear-all:hover {
+	color:$nice-blue;
+}
 
+.radio-label {
+	cursor:pointer;
+}
 
+input[type="radio"] {
+	display:none;
+}
+
+input[type="radio"] + .radio-label:before {
+	@include border-radius(20px);
+	background: $grey;
+	color: $main-font;
+	content:"";
+	display:inline-block;
+	vertical-align:middle;
+	padding:0.1em;
+	margin-right:5px;
+	height: 20px;
+	width: 20px;
+}
+
+input[type=radio]:checked + label:before {
+	content:"\2022";
+	color:$nice-blue;
+	font-size:20px;
+	font-weight:bold;
+	line-height:0.8em;
+	//text-align:center;
+}
+
+.send {
+	@include border-radius(30px);
+	background: $main-font;
+	color: $grey;
+	padding: 0.4em;
+	text-decoration: none;
+	border:none;
+	outline:none;
+}
+
+.send:after {
+	@include border-radius(20px);
+	background: $grey;
+	color: $main-font;
+	content: ">";
+	display: inline-block;
+	height: 25px;
+	line-height: 1.5em;
+	margin-left: 0.5em;
+	text-align: center;
+	width: 25px;
+}
+
+.send:hover {
+	color:$nice-blue;
+}
+
+.send:after:hover {
+	@extend .send:hover;
+}
+	
+.btns{
+	margin-top:0px;
+	display:block;
+	padding-bottom:0.4em;
+}
+
+.editbtn {
+	@include border-radius(3px);
+	font-size:10px;
+	background-color:$nice-blue;
+	border: 0 none;
+	margin-top:0px;
+	outline:none;
+}
+
+.editbtn:hover {
+	color:$grey;
+}
+
+.destroy {
+	@extend .editbtn;
+}
+
+.destroy:hover {
+	@extend .editbtn:hover;
+}
+
+.restart {
+	@extend .send
+}
 
 /*****LIST*****/
 #options-list {
 	li {
-		@include border-radius(5px);
+		@include border-radius(10px);
 		list-style-type:none;
 		font-size:30px;
 		background-color:rgba(255,255,255, 0.3);
 		position: relative;
 		display: block;
-		padding:0.2em;
-    margin:1em 10em;
-		margin-top:0;
 		text-decoration: none;
+		padding-top:0.4em;
+		margin:1em 10em;
+		margin-bottom:0px;
 		
 		.edit {
 			display: none;
+			padding-bottom:0.4em;
 		}
 	}
 	
