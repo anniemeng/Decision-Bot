@@ -1,5 +1,11 @@
 var app = app || {};
 
+Backbone.View.prototype.fadeIn = function(template, wrapper) {
+    wrapper.is(':hidden') ? 
+    wrapper.html(template).show("slow") : 
+    wrapper.hide("slow", function(){ wrapper.html(template).show("slow") });
+};
+
 app.viewChoices = Backbone.View.extend( {
 	el: '#inputting',
 	
@@ -18,6 +24,7 @@ app.viewChoices = Backbone.View.extend( {
 		this.count = 0;
 		this.$def = this.$("#one");
 		this.$image = this.$('#icon');
+		this.$image.attr('src',"img/normal.png");
 		this.$added = this.$('#new-option');
 		this.$choices = this.$('#choices');	
 		this.$submit = this.$('#submitting');
@@ -49,7 +56,7 @@ app.viewChoices = Backbone.View.extend( {
 			this.$list.hide();			
 			
 			//change to happy img 
-			this.$image.attr('src',"http://www.smilys.net/riesige_smilies/smiley5102.gif");
+			this.$image.attr('src',"img/happy.png");
 			
 			//get random choice
 			var resultChoice = $('input[name=result]:checked').val();
@@ -60,7 +67,10 @@ app.viewChoices = Backbone.View.extend( {
 				var chosen = app.opts.at(random).get("title");
 				this.$disp.html(this.resultTemplate( {
 					resultTxt: chosen
-				}));	
+				}));
+				
+				//restart button animation
+				this.$(".restart").delay(400).animate({"opacity":"1"}, 500, "swing");
 				
 			}
 			
@@ -91,7 +101,7 @@ app.viewChoices = Backbone.View.extend( {
 		}
 		//change back to original img
 		this.count=0;
-		this.$image.attr('src',"http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png");
+		this.changeImg();
 		return false;
 	},
 	
@@ -112,16 +122,16 @@ app.viewChoices = Backbone.View.extend( {
 	
 	changeImg: function() {
 		//original
-		if (this.count===0) {
-			this.$image.attr('src',"http://www.clker.com/cliparts/e/8/3/a/11949864601483835659smiley103.svg.med.png");
+		if (this.count === 0) {
+			 this.$image.attr("src","img/normal.png");
 		}
 		
 		else if (this.count % 2 === 0) {
-			this.$image.attr('src',"http://upload.wikimedia.org/wikipedia/en/f/f5/Question_mark.PNG");
+			this.$image.attr("src","img/right.png");
 		}
 		
 		else if (this.count % 2 === 1) {
-			this.$image.attr('src',"http://www.clipartbest.com/cliparts/4ib/A64/4ibA64big.png");
+			this.$image.attr('src',"img/left.png");
 		}
 	},
 	
