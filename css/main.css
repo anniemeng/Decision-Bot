@@ -349,30 +349,70 @@ input[type=radio]:checked + label {
     font-size: 7px;
   }
 
+  /**BUTTONS**/
   /* line 320, ../scss/main.scss */
+  button.clear-all {
+    line-height: 5px;
+    font-size: 13px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* line 327, ../scss/main.scss */
+  input[type="radio"] + .radio-label:before {
+    padding: 0.1em;
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+  }
+
+  /* line 334, ../scss/main.scss */
+  input[type=radio]:checked + label:before {
+    font-size: 10px;
+    line-height: 0.8em;
+  }
+
+  /* line 339, ../scss/main.scss */
+  .send:after, .restart:after {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+    background: #535755;
+    color: white;
+    content: ">";
+    display: inline-block;
+    height: 20px;
+    line-height: 1em;
+    margin-left: 0.5em;
+    text-align: center;
+    width: 20px;
+  }
+
+  /* line 353, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 5%;
     font-size: 15px;
   }
-  /* line 326, ../scss/main.scss */
+  /* line 359, ../scss/main.scss */
   #options-list input {
     font-size: 15px;
   }
 
-  /* line 331, ../scss/main.scss */
+  /* line 364, ../scss/main.scss */
   .result {
     font-size: 15px;
   }
 }
 @media (min-width: 310px) and (max-width: 400px) {
-  /* line 337, ../scss/main.scss */
+  /* line 370, ../scss/main.scss */
   #icon {
     width: 30%;
     height: 30%;
   }
 
-  /* line 342, ../scss/main.scss */
+  /* line 375, ../scss/main.scss */
   #new-option {
     font-size: 20px;
     width: 80%;
@@ -395,45 +435,45 @@ input[type=radio]:checked + label {
     font-size: 20px;
   }
 
-  /* line 351, ../scss/main.scss */
+  /* line 384, ../scss/main.scss */
   #choices, #submitting {
     font-size: 10px;
   }
 
-  /* line 355, ../scss/main.scss */
+  /* line 388, ../scss/main.scss */
   #decision {
-    font-size: 15px;
+    font-size: 13px;
   }
 
-  /* line 359, ../scss/main.scss */
+  /* line 392, ../scss/main.scss */
   .editbtn, .destroy {
     font-size: 10px;
   }
 
-  /* line 364, ../scss/main.scss */
+  /* line 397, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 5%;
     font-size: 20px;
   }
-  /* line 370, ../scss/main.scss */
+  /* line 403, ../scss/main.scss */
   #options-list input {
     font-size: 20px;
   }
 
-  /* line 375, ../scss/main.scss */
+  /* line 408, ../scss/main.scss */
   .result {
     font-size: 20px;
   }
 }
 @media (min-width: 400px) and (max-width: 550px) {
-  /* line 381, ../scss/main.scss */
+  /* line 414, ../scss/main.scss */
   #icon {
     width: 30%;
     height: 30%;
   }
 
-  /* line 386, ../scss/main.scss */
+  /* line 419, ../scss/main.scss */
   #new-option {
     font-size: 25px;
     width: 80%;
@@ -456,45 +496,45 @@ input[type=radio]:checked + label {
     font-size: 25px;
   }
 
-  /* line 395, ../scss/main.scss */
+  /* line 428, ../scss/main.scss */
   #decision {
     font-size: 16px;
   }
 
-  /* line 399, ../scss/main.scss */
+  /* line 432, ../scss/main.scss */
   .editbtn, .destroy {
     font-size: 10px;
   }
 
-  /* line 404, ../scss/main.scss */
+  /* line 437, ../scss/main.scss */
   #choices, #submitting {
     font-size: 13px;
   }
 
-  /* line 409, ../scss/main.scss */
+  /* line 442, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 5%;
     font-size: 25px;
   }
-  /* line 415, ../scss/main.scss */
+  /* line 448, ../scss/main.scss */
   #options-list input {
     font-size: 25px;
   }
 
-  /* line 420, ../scss/main.scss */
+  /* line 453, ../scss/main.scss */
   .result {
     font-size: 25px;
   }
 }
 @media (min-width: 550px) and (max-width: 850px) {
-  /* line 427, ../scss/main.scss */
+  /* line 460, ../scss/main.scss */
   #icon {
     width: 25%;
     height: 25%;
   }
 
-  /* line 432, ../scss/main.scss */
+  /* line 465, ../scss/main.scss */
   #new-option {
     font-size: 30px;
     width: 80%;
@@ -517,40 +557,40 @@ input[type=radio]:checked + label {
     font-size: 30px;
   }
 
-  /* line 441, ../scss/main.scss */
+  /* line 474, ../scss/main.scss */
   #submitting, #choices {
     font-size: 15px;
   }
 
-  /* line 445, ../scss/main.scss */
+  /* line 478, ../scss/main.scss */
   #decision {
     font-size: 16px;
   }
 
-  /* line 451, ../scss/main.scss */
+  /* line 484, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 9%;
     font-size: 30px;
   }
-  /* line 457, ../scss/main.scss */
+  /* line 490, ../scss/main.scss */
   #options-list input {
     font-size: 30px;
   }
 
-  /* line 462, ../scss/main.scss */
+  /* line 495, ../scss/main.scss */
   .result {
     font-size: 30px;
   }
 }
 @media (min-width: 1300px) {
-  /* line 468, ../scss/main.scss */
+  /* line 501, ../scss/main.scss */
   #icon {
     width: 20%;
     height: 20%;
   }
 
-  /* line 473, ../scss/main.scss */
+  /* line 506, ../scss/main.scss */
   #new-option {
     width: 80%;
     font-size: 55px;
@@ -573,17 +613,17 @@ input[type=radio]:checked + label {
     font-size: 55px;
   }
 
-  /* line 482, ../scss/main.scss */
+  /* line 515, ../scss/main.scss */
   #submitting, #choices {
     font-size: 30px;
   }
 
-  /* line 486, ../scss/main.scss */
+  /* line 519, ../scss/main.scss */
   #decision {
     font-size: 30px;
   }
 
-  /* line 490, ../scss/main.scss */
+  /* line 523, ../scss/main.scss */
   .send:after, .restart:after {
     height: 30px;
     line-height: 0.8em;
@@ -592,28 +632,28 @@ input[type=radio]:checked + label {
     width: 25px;
   }
 
-  /* line 498, ../scss/main.scss */
+  /* line 531, ../scss/main.scss */
   .editbtn, .destroy {
     font-size: 20px;
   }
 
-  /* line 503, ../scss/main.scss */
+  /* line 536, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 13%;
     font-size: 55px;
   }
-  /* line 509, ../scss/main.scss */
+  /* line 542, ../scss/main.scss */
   #options-list input {
     font-size: 55px;
   }
 
-  /* line 514, ../scss/main.scss */
+  /* line 547, ../scss/main.scss */
   .result {
     font-size: 55px;
   }
 
-  /* line 518, ../scss/main.scss */
+  /* line 551, ../scss/main.scss */
   .restart {
     font-size: 30px;
   }
