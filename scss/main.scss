@@ -1,14 +1,12 @@
-@import 'compass/css3';
-/*VARIABLES*/
+/****VARIABLES****/
 $nice-blue: #8DE9F7;
 $grey: #535755;
 $main-font: #fff;
 
-$fontcab: 'Cabin', sans-serif;
 $fontsrc: 'Source Sans Pro', sans-serif;
 $fontral: 'Raleway', sans-serif;
 
-/*MIXINS*/
+/****MIXINS****/
 @mixin placeholder() {
 	&::-webkit-input-placeholder {@content}
 	&:-moz-placeholder {@content}
@@ -29,39 +27,40 @@ $fontral: 'Raleway', sans-serif;
   box-shadow:$top $left $blur $color #{$inset};
 }
 
+
+/****ALL SIZES****/
 body {
 	background-color:$nice-blue;
 	text-align:center;
 	font-family: $fontsrc;
 	font-weight:200;
 	color:$main-font;
+	margin:0px;
 }
 
 /*TOP*/
-
 header {
 	background-color: $grey;
   color: $main-font;
   padding: 1px 0 50px;
-  margin-top:0px;
-  margin-bottom:0px;
+  margin: 0px auto;
 	letter-spacing:0.2em;
 }
 
 h1 {
-	font-family: $fontral;
+	font-family: $fontsrc;
 	font-size:80px;
 	font-weight:200;
-	margin-bottom:10px;
-	margin-top:10px;
+	margin:10px auto;
+	padding: 0 0.5em;
 }
 
 #icon {
 	margin-top:10px;
+	margin-bottom:0px;
  	width:20%;
 	height:20%;
 }
-
 
 /*****INPUT*****/
 #new-option {
@@ -93,22 +92,29 @@ h1 {
 
 /*CHOICES*/
 #submitting {
-	margin-bottom:5em;
+	margin-top:0em;
+	margin-bottom:3em;
 }
 
 form {
 	color:$grey;
-	display:inline;
+	display:block;
 	letter-spacing:0.1em;
 }
 
+#decision {
+	margin-top:1em;
+	display:block;
+}
+
 #choices {
-	margin-top:0px;
-	font-size:20px;
-	margin-bottom:1em;
 	background:$grey;
+	font-size:18px;
+	margin-top:0em;
+	margin-bottom:1em;
+	padding-top:0em;
 	padding-bottom:1em;
-	letter-spacing:0.1em;
+	letter-spacing:0.05em;
 	width:100%;
 }
 
@@ -165,7 +171,6 @@ input[type=radio]:checked + label:before {
 	font-size:20px;
 	font-weight:bold;
 	line-height:0.8em;
-	//text-align:center;
 }
 
 input[type=radio]:checked + label {
@@ -211,7 +216,7 @@ input[type=radio]:checked + label {
 
 .editbtn {
 	@include border-radius(3px);
-	font-size:10px;
+	font-size:15px;
 	background-color:$nice-blue;
 	border: 0 none;
 	margin-top:0px;
@@ -233,7 +238,6 @@ input[type=radio]:checked + label {
 .restart {
 	@extend .send;
 	opacity:0;
-	
 }
 
 /*****LIST*****/
@@ -244,16 +248,15 @@ input[type=radio]:checked + label {
 		font-size:30px;
 		background-color:rgba(255,255,255, 0.3);
 		position: relative;
-		display: inline-block;
-		text-decoration: none;
-		padding-top:0.4em;
-		margin:1em 0em;
-		margin-bottom:0px;
-		padding-left:1em;
-		padding-right:1em;
-		word-wrap:break-word;
+		display: block;
 		text-align:center;
-		width:50%;
+		text-decoration: none;
+		margin:1em 15%;
+		margin-left:12%;
+		margin-bottom:0em;
+		padding:0.4em 1em;
+		padding-bottom:0em;
+		word-wrap:break-word;
 		
 		.edit {
 			display: none;
@@ -276,17 +279,223 @@ input[type=radio]:checked + label {
 
 /***DECISION***/
 .result {
-	margin-top:50px;
+	margin-top:5%;
 	font-size:50px;
 	opacity:0;
-	padding: 0 5em;
-	max-width:100%;
+	padding: 0 15%;
 	word-wrap:break-word;
 }
 
 .restart {
-	margin-top: 10px;
-	margin-bottom:10px;
+	margin-top: 2%;
+	margin-bottom:4%;
+}
+
+#verdict {
+	color:$grey;
 }
 	
+/****MEDIA QUERIES****/
+@media (max-width:400px) {
+	h1 {
+		font-size:35px;
+	}
+	
+	#icon {
+		width:30%;
+		height:30%;
+	}
 
+	#new-option {
+		@include placeholder {
+			font-size:20px;
+		}
+		font-size:20px;
+		width:80%;
+		margin-bottom:0.5em;
+	}
+	
+	#choices, #submitting {
+		font-size:10px;
+	}
+	
+	#decision {
+		font-size:15px;
+	}
+	
+	.editbtn {
+		font-size:10px;
+	}
+	
+	#options-list {
+		li {
+			margin:1em 15%;
+			margin-left:5%;
+			font-size:20px;
+		}
+		
+		input {
+			font-size:20px;
+		}
+	}
+	
+	.result {
+		font-size:20px;
+	}
+}
+
+@media (min-width:400px) and (max-width:550px) {
+	h1 {
+		font-size:50px;
+	}
+	
+	#icon {
+		width:30%;
+		height:30%;
+	}
+
+	#new-option {
+		@include placeholder {
+			font-size:25px;
+		}
+		font-size:25px;
+		width:80%;
+		margin-bottom:0.5em;
+	}
+	
+	#decision {
+		font-size:16px;
+	}
+	
+	.editbtn {
+		font-size:10px;
+	}
+	
+	
+	#choices, #submitting {
+		font-size:13px;
+	}
+	
+	#options-list {
+		li {
+			margin:1em 15%;
+			margin-left:5%;
+		  font-size:25px;
+		}
+		
+		input {
+			font-size:25px;
+		}
+	}
+	
+	.result {
+		font-size:25px;
+	}
+}
+
+
+@media (min-width:550px) and (max-width:850px) {
+	h1 {
+		font-size:70px;
+	}
+	
+	#icon {
+		width:25%;
+		height:25%;
+	}
+
+	#new-option {
+		@include placeholder {
+			font-size:30px;
+		}
+		font-size:30px;
+		width:80%;
+		margin-bottom:0.5em;
+	}
+	
+	#submitting, #choices {
+		font-size:15px;
+	}
+	
+	#decision {
+		font-size:16px;
+	}
+
+
+	#options-list {
+		li {
+			margin:1em 15%;
+			margin-left:9%;
+			font-size:30px;
+		}
+		
+		input {
+			font-size:30px;
+		}
+	}
+	
+	.result {
+		font-size:30px;
+	}
+}
+
+@media (min-width:1300px){
+	h1 {
+		font-size:100px;
+	}
+	
+	#icon {
+		width:20%;
+		height:20%;
+	}
+
+	#new-option {
+		@include placeholder {
+			font-size:55px;
+		}
+		width:80%;
+		font-size:55px;
+		margin-bottom:0.5em;
+	}
+	
+	#submitting, #choices {
+		font-size:30px;
+	}
+	
+	#decision {
+		font-size:30px;
+	}
+	
+	.send:after {
+		height: 30px;
+		line-height: 0.8em;
+		margin-left: 0.5em;
+		text-align: center;
+		width: 25px;
+	}
+	
+	.editbtn {
+		font-size:20px;
+	}
+
+	#options-list {
+		li {
+			margin:1em 15%;
+			margin-left:13%;
+			font-size:55px;
+		}
+		
+		input {
+			font-size:55px;
+		}
+	}
+	
+	.result {
+		font-size:55px;
+	}
+	
+	.restart {
+		font-size:30px;
+	}
+	
+}
