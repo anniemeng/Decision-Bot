@@ -22,15 +22,6 @@ header {
 }
 
 /* line 50, ../scss/main.scss */
-h1 {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 80px;
-  font-weight: 200;
-  margin: 10px auto;
-  padding: 0 0.5em;
-}
-
-/* line 58, ../scss/main.scss */
 #icon {
   margin-top: 10px;
   margin-bottom: 0px;
@@ -39,7 +30,7 @@ h1 {
 }
 
 /*****INPUT*****/
-/* line 66, ../scss/main.scss */
+/* line 58, ../scss/main.scss */
 #new-option {
   background: none;
   font-size: 45px;
@@ -73,7 +64,7 @@ h1 {
   font-size: 45px;
 }
 
-/* line 83, ../scss/main.scss */
+/* line 75, ../scss/main.scss */
 .edit {
   margin: 0;
   background: none;
@@ -84,26 +75,26 @@ h1 {
 }
 
 /*CHOICES*/
-/* line 94, ../scss/main.scss */
+/* line 86, ../scss/main.scss */
 #submitting {
   margin-top: 0em;
   margin-bottom: 3em;
 }
 
-/* line 99, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 form {
   color: #535755;
   display: block;
   letter-spacing: 0.1em;
 }
 
-/* line 105, ../scss/main.scss */
+/* line 97, ../scss/main.scss */
 #decision {
   margin-top: 1em;
   display: block;
 }
 
-/* line 110, ../scss/main.scss */
+/* line 102, ../scss/main.scss */
 #choices {
   background: #535755;
   font-size: 18px;
@@ -115,14 +106,14 @@ form {
   width: 100%;
 }
 
-/* line 121, ../scss/main.scss */
+/* line 113, ../scss/main.scss */
 #num {
   color: #8de9f7;
   font-weight: bold;
 }
 
 /**BUTTONS**/
-/* line 127, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 button.clear-all {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -142,22 +133,22 @@ button.clear-all {
   height: 20px;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 .clear-all:hover {
   color: #8de9f7;
 }
 
-/* line 147, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 .radio-label {
   cursor: pointer;
 }
 
-/* line 151, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 155, ../scss/main.scss */
+/* line 147, ../scss/main.scss */
 input[type="radio"] + .radio-label:before {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -174,7 +165,7 @@ input[type="radio"] + .radio-label:before {
   width: 20px;
 }
 
-/* line 168, ../scss/main.scss */
+/* line 160, ../scss/main.scss */
 input[type=radio]:checked + label:before {
   content: "\2022";
   color: #8de9f7;
@@ -183,12 +174,12 @@ input[type=radio]:checked + label:before {
   line-height: 0.8em;
 }
 
-/* line 176, ../scss/main.scss */
+/* line 168, ../scss/main.scss */
 input[type=radio]:checked + label {
   color: white;
 }
 
-/* line 180, ../scss/main.scss */
+/* line 172, ../scss/main.scss */
 .send, .restart {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -202,7 +193,7 @@ input[type=radio]:checked + label {
   outline: none;
 }
 
-/* line 190, ../scss/main.scss */
+/* line 182, ../scss/main.scss */
 .send:after, .restart:after {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -219,19 +210,19 @@ input[type=radio]:checked + label {
   width: 25px;
 }
 
-/* line 203, ../scss/main.scss */
+/* line 195, ../scss/main.scss */
 .send:hover, .send:hover:after, .restart:hover:after, .restart:hover {
   color: #8de9f7;
 }
 
-/* line 211, ../scss/main.scss */
+/* line 203, ../scss/main.scss */
 .btns {
   margin-top: 0px;
   display: block;
   padding-bottom: 0.4em;
 }
 
-/* line 217, ../scss/main.scss */
+/* line 209, ../scss/main.scss */
 .editbtn, .destroy {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -244,18 +235,18 @@ input[type=radio]:checked + label {
   outline: none;
 }
 
-/* line 226, ../scss/main.scss */
+/* line 218, ../scss/main.scss */
 .editbtn:hover, .destroy:hover {
   color: #535755;
 }
 
-/* line 238, ../scss/main.scss */
+/* line 230, ../scss/main.scss */
 .restart {
   opacity: 0;
 }
 
 /*****LIST*****/
-/* line 245, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 #options-list li {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -275,24 +266,24 @@ input[type=radio]:checked + label {
   padding-bottom: 0em;
   word-wrap: break-word;
 }
-/* line 261, ../scss/main.scss */
+/* line 253, ../scss/main.scss */
 #options-list li .edit {
   display: none;
   padding-bottom: 0.4em;
   width: 100%;
   word-wrap: break-word;
 }
-/* line 270, ../scss/main.scss */
+/* line 262, ../scss/main.scss */
 #options-list li.editing .view {
   display: none;
 }
-/* line 274, ../scss/main.scss */
+/* line 266, ../scss/main.scss */
 #options-list input {
   font-size: 30px;
 }
 
 /***DECISION***/
-/* line 281, ../scss/main.scss */
+/* line 273, ../scss/main.scss */
 .result {
   margin-top: 5%;
   font-size: 50px;
@@ -301,31 +292,87 @@ input[type=radio]:checked + label {
   word-wrap: break-word;
 }
 
-/* line 289, ../scss/main.scss */
+/* line 281, ../scss/main.scss */
 .restart {
   margin-top: 2%;
   margin-bottom: 4%;
 }
 
-/* line 294, ../scss/main.scss */
+/* line 286, ../scss/main.scss */
 #verdict {
   color: #535755;
 }
 
 /****MEDIA QUERIES****/
-@media (max-width: 400px) {
-  /* line 300, ../scss/main.scss */
-  h1 {
-    font-size: 35px;
-  }
-
-  /* line 304, ../scss/main.scss */
+@media (max-width: 310px) {
+  /* line 293, ../scss/main.scss */
   #icon {
     width: 30%;
     height: 30%;
   }
 
-  /* line 309, ../scss/main.scss */
+  /* line 298, ../scss/main.scss */
+  #new-option {
+    font-size: 15px;
+    width: 80%;
+    margin-bottom: 0.5em;
+  }
+  /* line 11, ../scss/main.scss */
+  #new-option::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+  /* line 12, ../scss/main.scss */
+  #new-option:-moz-placeholder {
+    font-size: 15px;
+  }
+  /* line 13, ../scss/main.scss */
+  #new-option::-moz-placeholder {
+    font-size: 15px;
+  }
+  /* line 14, ../scss/main.scss */
+  #new-option:-ms-input-placeholder {
+    font-size: 15px;
+  }
+
+  /* line 307, ../scss/main.scss */
+  #choices, #submitting {
+    font-size: 7px;
+  }
+
+  /* line 311, ../scss/main.scss */
+  #decision {
+    font-size: 10px;
+  }
+
+  /* line 315, ../scss/main.scss */
+  .editbtn, .destroy {
+    font-size: 7px;
+  }
+
+  /* line 320, ../scss/main.scss */
+  #options-list li {
+    margin: 1em 15%;
+    margin-left: 5%;
+    font-size: 15px;
+  }
+  /* line 326, ../scss/main.scss */
+  #options-list input {
+    font-size: 15px;
+  }
+
+  /* line 331, ../scss/main.scss */
+  .result {
+    font-size: 15px;
+  }
+}
+@media (min-width: 310px) and (max-width: 400px) {
+  /* line 337, ../scss/main.scss */
+  #icon {
+    width: 30%;
+    height: 30%;
+  }
+
+  /* line 342, ../scss/main.scss */
   #new-option {
     font-size: 20px;
     width: 80%;
@@ -348,50 +395,45 @@ input[type=radio]:checked + label {
     font-size: 20px;
   }
 
-  /* line 318, ../scss/main.scss */
+  /* line 351, ../scss/main.scss */
   #choices, #submitting {
     font-size: 10px;
   }
 
-  /* line 322, ../scss/main.scss */
+  /* line 355, ../scss/main.scss */
   #decision {
     font-size: 15px;
   }
 
-  /* line 326, ../scss/main.scss */
+  /* line 359, ../scss/main.scss */
   .editbtn, .destroy {
     font-size: 10px;
   }
 
-  /* line 331, ../scss/main.scss */
+  /* line 364, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 5%;
     font-size: 20px;
   }
-  /* line 337, ../scss/main.scss */
+  /* line 370, ../scss/main.scss */
   #options-list input {
     font-size: 20px;
   }
 
-  /* line 342, ../scss/main.scss */
+  /* line 375, ../scss/main.scss */
   .result {
     font-size: 20px;
   }
 }
 @media (min-width: 400px) and (max-width: 550px) {
-  /* line 348, ../scss/main.scss */
-  h1 {
-    font-size: 50px;
-  }
-
-  /* line 352, ../scss/main.scss */
+  /* line 381, ../scss/main.scss */
   #icon {
     width: 30%;
     height: 30%;
   }
 
-  /* line 357, ../scss/main.scss */
+  /* line 386, ../scss/main.scss */
   #new-option {
     font-size: 25px;
     width: 80%;
@@ -414,50 +456,45 @@ input[type=radio]:checked + label {
     font-size: 25px;
   }
 
-  /* line 366, ../scss/main.scss */
+  /* line 395, ../scss/main.scss */
   #decision {
     font-size: 16px;
   }
 
-  /* line 370, ../scss/main.scss */
+  /* line 399, ../scss/main.scss */
   .editbtn, .destroy {
     font-size: 10px;
   }
 
-  /* line 375, ../scss/main.scss */
+  /* line 404, ../scss/main.scss */
   #choices, #submitting {
     font-size: 13px;
   }
 
-  /* line 380, ../scss/main.scss */
+  /* line 409, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 5%;
     font-size: 25px;
   }
-  /* line 386, ../scss/main.scss */
+  /* line 415, ../scss/main.scss */
   #options-list input {
     font-size: 25px;
   }
 
-  /* line 391, ../scss/main.scss */
+  /* line 420, ../scss/main.scss */
   .result {
     font-size: 25px;
   }
 }
 @media (min-width: 550px) and (max-width: 850px) {
-  /* line 398, ../scss/main.scss */
-  h1 {
-    font-size: 70px;
-  }
-
-  /* line 402, ../scss/main.scss */
+  /* line 427, ../scss/main.scss */
   #icon {
     width: 25%;
     height: 25%;
   }
 
-  /* line 407, ../scss/main.scss */
+  /* line 432, ../scss/main.scss */
   #new-option {
     font-size: 30px;
     width: 80%;
@@ -480,45 +517,40 @@ input[type=radio]:checked + label {
     font-size: 30px;
   }
 
-  /* line 416, ../scss/main.scss */
+  /* line 441, ../scss/main.scss */
   #submitting, #choices {
     font-size: 15px;
   }
 
-  /* line 420, ../scss/main.scss */
+  /* line 445, ../scss/main.scss */
   #decision {
     font-size: 16px;
   }
 
-  /* line 426, ../scss/main.scss */
+  /* line 451, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 9%;
     font-size: 30px;
   }
-  /* line 432, ../scss/main.scss */
+  /* line 457, ../scss/main.scss */
   #options-list input {
     font-size: 30px;
   }
 
-  /* line 437, ../scss/main.scss */
+  /* line 462, ../scss/main.scss */
   .result {
     font-size: 30px;
   }
 }
 @media (min-width: 1300px) {
-  /* line 443, ../scss/main.scss */
-  h1 {
-    font-size: 100px;
-  }
-
-  /* line 447, ../scss/main.scss */
+  /* line 468, ../scss/main.scss */
   #icon {
     width: 20%;
     height: 20%;
   }
 
-  /* line 452, ../scss/main.scss */
+  /* line 473, ../scss/main.scss */
   #new-option {
     width: 80%;
     font-size: 55px;
@@ -541,17 +573,17 @@ input[type=radio]:checked + label {
     font-size: 55px;
   }
 
-  /* line 461, ../scss/main.scss */
+  /* line 482, ../scss/main.scss */
   #submitting, #choices {
     font-size: 30px;
   }
 
-  /* line 465, ../scss/main.scss */
+  /* line 486, ../scss/main.scss */
   #decision {
     font-size: 30px;
   }
 
-  /* line 469, ../scss/main.scss */
+  /* line 490, ../scss/main.scss */
   .send:after, .restart:after {
     height: 30px;
     line-height: 0.8em;
@@ -560,28 +592,28 @@ input[type=radio]:checked + label {
     width: 25px;
   }
 
-  /* line 477, ../scss/main.scss */
+  /* line 498, ../scss/main.scss */
   .editbtn, .destroy {
     font-size: 20px;
   }
 
-  /* line 482, ../scss/main.scss */
+  /* line 503, ../scss/main.scss */
   #options-list li {
     margin: 1em 15%;
     margin-left: 13%;
     font-size: 55px;
   }
-  /* line 488, ../scss/main.scss */
+  /* line 509, ../scss/main.scss */
   #options-list input {
     font-size: 55px;
   }
 
-  /* line 493, ../scss/main.scss */
+  /* line 514, ../scss/main.scss */
   .result {
     font-size: 55px;
   }
 
-  /* line 497, ../scss/main.scss */
+  /* line 518, ../scss/main.scss */
   .restart {
     font-size: 30px;
   }

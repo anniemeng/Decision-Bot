@@ -47,14 +47,6 @@ header {
 	letter-spacing:0.2em;
 }
 
-h1 {
-	font-family: $fontsrc;
-	font-size:80px;
-	font-weight:200;
-	margin:10px auto;
-	padding: 0 0.5em;
-}
-
 #icon {
 	margin-top:10px;
 	margin-bottom:0px;
@@ -296,11 +288,52 @@ input[type=radio]:checked + label {
 }
 	
 /****MEDIA QUERIES****/
-@media (max-width:400px) {
-	h1 {
-		font-size:35px;
+@media (max-width:310px) {
+	
+	#icon {
+		width:30%;
+		height:30%;
+	}
+
+	#new-option {
+		@include placeholder {
+			font-size:15px;
+		}
+		font-size:15px;
+		width:80%;
+		margin-bottom:0.5em;
 	}
 	
+	#choices, #submitting {
+		font-size:7px;
+	}
+	
+	#decision {
+		font-size:10px;
+	}
+	
+	.editbtn {
+		font-size:7px;
+	}
+	
+	#options-list {
+		li {
+			margin:1em 15%;
+			margin-left:5%;
+			font-size:15px;
+		}
+		
+		input {
+			font-size:15px;
+		}
+	}
+	
+	.result {
+		font-size:15px;
+	}
+}
+
+@media (min-width:310px) and (max-width:400px) {
 	#icon {
 		width:30%;
 		height:30%;
@@ -345,10 +378,6 @@ input[type=radio]:checked + label {
 }
 
 @media (min-width:400px) and (max-width:550px) {
-	h1 {
-		font-size:50px;
-	}
-	
 	#icon {
 		width:30%;
 		height:30%;
@@ -395,10 +424,6 @@ input[type=radio]:checked + label {
 
 
 @media (min-width:550px) and (max-width:850px) {
-	h1 {
-		font-size:70px;
-	}
-	
 	#icon {
 		width:25%;
 		height:25%;
@@ -439,11 +464,7 @@ input[type=radio]:checked + label {
 	}
 }
 
-@media (min-width:1300px){
-	h1 {
-		font-size:100px;
-	}
-	
+@media (min-width:1300px){	
 	#icon {
 		width:20%;
 		height:20%;
