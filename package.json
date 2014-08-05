@@ -1,6 +1,10 @@
 {
   "name": "decision-bot",
   "version": "0.0.1",
+  "repository" :
+  { "type" : "git"
+  , "url" : "http://github.com/anniemeng/Decision-Bot.git"
+  },
   "dependencies": {
     "express": "2.5.0",
     "coffee-script": "1.1.3",
