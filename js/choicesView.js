@@ -1,11 +1,5 @@
 var app = app || {};
 
-Backbone.View.prototype.fadeIn = function(template, wrapper) {
-    wrapper.is(':hidden') ? 
-    wrapper.html(template).show("slow") : 
-    wrapper.hide("slow", function(){ wrapper.html(template).show("slow") });
-};
-
 app.viewChoices = Backbone.View.extend( {
 	el: '#inputting',
 	
@@ -24,7 +18,6 @@ app.viewChoices = Backbone.View.extend( {
 		this.count = 0;
 		this.$def = this.$("#one");
 		this.$image = this.$('#icon');
-		this.$image.attr('src',"img/normal.png");
 		this.$added = this.$('#new-option');
 		this.$choices = this.$('#choices');	
 		this.$submit = this.$('#submitting');
@@ -39,7 +32,7 @@ app.viewChoices = Backbone.View.extend( {
 	
 	render: function () {
 		var total = app.opts.length;
-		if ((total > 0)&& (!this.bool)) {
+		if ((total > 0) && (!this.bool)) {
 			this.$choices.show();
 			this.$submit.show();
 			
@@ -48,6 +41,7 @@ app.viewChoices = Backbone.View.extend( {
 			}));
 		}
 		
+		//get result
 		else if ((total > 0) && this.bool) {
 			//hide everything else
 			this.$choices.hide();
@@ -56,7 +50,10 @@ app.viewChoices = Backbone.View.extend( {
 			this.$list.hide();			
 			
 			//change to happy img 
+			this.$image.css("opacity", "0");
 			this.$image.attr('src',"img/happy.png");
+			this.$image.animate({"opacity":"1"}, 400, "easeInCubic");
+			
 			
 			//get random choice
 			var resultChoice = $('input[name=result]:checked').val();
@@ -69,8 +66,9 @@ app.viewChoices = Backbone.View.extend( {
 					resultTxt: chosen
 				}));
 				
-				//restart button animation
-				this.$(".restart").delay(400).animate({"opacity":"1"}, 500, "swing");
+				//animation
+				this.$(".result").delay(400).animate({"opacity":"1"}, 800, "swing");
+				this.$(".restart").delay(1200).animate({"opacity":"1"}, 500, "swing");
 				
 			}
 			
@@ -84,12 +82,16 @@ app.viewChoices = Backbone.View.extend( {
 				this.$disp.html(this.resultTemplate( {
 					resultTxt: chosen
 				}));	
+				
+				//animation
+				this.$(".result").delay(400).animate({"opacity":"1"}, 800, "swing");
+				this.$(".restart").delay(1200).animate({"opacity":"1"}, 500, "swing");
 			}
 		}
 
 		else {
-			this.$added.show();
 			this.$choices.hide();
+			this.$added.show();
 			this.$submit.hide();
 			this.$list.show();
 		}
@@ -100,8 +102,11 @@ app.viewChoices = Backbone.View.extend( {
     	app.opts.at(0).destroy(); 
 		}
 		//change back to original img
-		this.count=0;
+		this.count = 0;
 		this.changeImg();
+		this.$added.val('');
+		this.$added.focus();
+		this.$choices.hide();
 		return false;
 	},
 	
@@ -123,7 +128,9 @@ app.viewChoices = Backbone.View.extend( {
 	changeImg: function() {
 		//original
 		if (this.count === 0) {
+			 this.$image.css("opacity", "0");
 			 this.$image.attr("src","img/normal.png");
+			 this.$image.animate({"opacity":"1"}, 300, "easeInCubic");
 		}
 		
 		else if (this.count % 2 === 0) {
@@ -163,11 +170,9 @@ app.viewChoices = Backbone.View.extend( {
 		this.clear();
 		this.$disp.html(null);
 		this.render();
-		this.$added.val('');
 		this.$added.focus();
 		this.$def.prop("checked", true);
 	}
-
 });
 
 

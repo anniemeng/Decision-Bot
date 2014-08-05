@@ -50,16 +50,16 @@ header {
 
 h1 {
 	font-family: $fontral;
-	font-size:100px;
+	font-size:80px;
 	font-weight:200;
 	margin-bottom:10px;
 	margin-top:10px;
 }
 
-img {
+#icon {
 	margin-top:10px;
- 	width:15%;
-	height:15%;
+ 	width:20%;
+	height:20%;
 }
 
 
@@ -75,9 +75,10 @@ img {
   border: none;
 	margin-top:0.5em;
 	margin-bottom: 0.2em;
-	width:39%;
+	width:60%;
 	border-bottom: 1px solid $main-font;
 	padding: 10px 10px;
+	text-align:center;
 }
 
 .edit {
@@ -86,6 +87,7 @@ img {
 	font-size: 15px;
 	outline: none;
 	border: none;
+	width:100%;
 }
 
 
@@ -107,6 +109,7 @@ form {
 	background:$grey;
 	padding-bottom:1em;
 	letter-spacing:0.1em;
+	width:100%;
 }
 
 #num {
@@ -163,6 +166,10 @@ input[type=radio]:checked + label:before {
 	font-weight:bold;
 	line-height:0.8em;
 	//text-align:center;
+}
+
+input[type=radio]:checked + label {
+	color:$main-font;
 }
 
 .send {
@@ -237,16 +244,24 @@ input[type=radio]:checked + label:before {
 		font-size:30px;
 		background-color:rgba(255,255,255, 0.3);
 		position: relative;
-		display: block;
+		display: inline-block;
 		text-decoration: none;
 		padding-top:0.4em;
-		margin:1em 10em;
+		margin:1em 0em;
 		margin-bottom:0px;
+		padding-left:1em;
+		padding-right:1em;
+		word-wrap:break-word;
+		text-align:center;
+		width:50%;
 		
 		.edit {
 			display: none;
 			padding-bottom:0.4em;
+			width:100%;
+			word-wrap:break-word;
 		}
+		
 	}
 	
 	li.editing .view {
@@ -263,6 +278,10 @@ input[type=radio]:checked + label:before {
 .result {
 	margin-top:50px;
 	font-size:50px;
+	opacity:0;
+	padding: 0 5em;
+	max-width:100%;
+	word-wrap:break-word;
 }
 
 .restart {

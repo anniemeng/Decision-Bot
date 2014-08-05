@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Decision Maker</title>
+	<title>Decision Bot</title>
 	
 	<!--CSS-->
 	<link rel="stylesheet" href="css/normalize.css">
@@ -24,7 +24,7 @@
 	</script>
 	<script type="text/template" id="item-view">
 		<div class="view">
-      <label> 
+      <label id="value"> 
 				<%= title %>
 			</label>
 			<div class="btns">
@@ -32,7 +32,7 @@
       <button type="button" class="destroy">Delete</button>
 			</div>
     </div>
-		<input class="edit" value="<%= title %>">
+		<input class="edit" value="<%= title %>" maxlength="100">
 	</script>
 	<script type="text/template" id="result-disp">
 		<div class="result">
@@ -51,16 +51,32 @@
 	<script src="js/choicesView.js"></script>
 	<script src="js/optionView.js"></script>
 	<script src="js/app.js"></script>
+	<!--<script>
+	$(document).ready(function() {
+		var first = false;
+		var temp = $('#new-option').val();
+		$('#new-option').val('');
+		$('#new-option').val(temp);
+	
+		$(document).keypress(function(e) {
+		  if (!first) {
+				$('#new-option').val('');
+				$('#new-option').focus();
+				first = true;
+			}
+		});
+	});
+</script>-->
 </head>
 
 <body>
 	<section id="inputting">
 		<header>
 			<h1> Decision Bot </h1>
-			<img id="icon" ></img>
+			<img id="icon" src="img/normal.png"></img>
 		</header>
 	  <section id="choices"></section>
-		<input type="text" id="new-option" placeholder="Type your indecisions away" maxlength="50" autofocus>
+		<input type="text" id="new-option" placeholder="Type your indecisions away" maxlength="100" autofocus>
 		<section id="disp"></section>
 		<div id="panel">
 			
