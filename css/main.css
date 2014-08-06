@@ -108,7 +108,7 @@ form {
 
 /* line 113, ../scss/main.scss */
 #count {
-  font-size: 20px;
+  font-size: 40px;
 }
 
 /**BUTTONS**/
@@ -340,7 +340,7 @@ input[type=radio]:checked + label {
   }
 
   /* line 320, ../scss/main.scss */
-  .result {
+  .result, #count {
     font-size: 15px;
   }
 }
@@ -401,7 +401,7 @@ input[type=radio]:checked + label {
   }
 
   /* line 364, ../scss/main.scss */
-  .result {
+  .result, #count {
     font-size: 20px;
   }
 }
@@ -462,7 +462,7 @@ input[type=radio]:checked + label {
   }
 
   /* line 409, ../scss/main.scss */
-  .result {
+  .result, #count {
     font-size: 25px;
   }
 }
@@ -518,7 +518,7 @@ input[type=radio]:checked + label {
   }
 
   /* line 451, ../scss/main.scss */
-  .result {
+  .result, #count {
     font-size: 30px;
   }
 }
@@ -588,7 +588,7 @@ input[type=radio]:checked + label {
   }
 
   /* line 503, ../scss/main.scss */
-  .result {
+  .result, #count {
     font-size: 55px;
   }
 
