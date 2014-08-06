@@ -3,9 +3,9 @@
 
 <head>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 	<title>Decision Bot</title>
-	
+
 	<!--CSS-->
 	<link rel="stylesheet" href="css/normalize.css">
   <!--SCSS compiled-->
@@ -15,14 +15,14 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
 	<!--respond.js-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-	
+
 	<!--<script>
 	$(document).ready(function() {
 		var first = false;
 		var temp = $('#new-option').val();
 		$('#new-option').val('');
 		$('#new-option').val(temp);
-	
+
 		$(document).keypress(function(e) {
 		  if (!first) {
 				$('#new-option').val('');
@@ -44,34 +44,34 @@
 		<input type="text" id="new-option" placeholder="Type your indecisions away" maxlength="100" autofocus>
 		<section id="disp"></section>
 		<div id="panel">
-			
+
 			<section id="submitting">
-				<form>			
-					<div id="result-choice"></div>Give me a(n)
+				<form>
+					<div id="result-choice"></div>Give me a(n):
 						<input type="radio" class="radio" id="one" name="result" value="single" checked="checked">
-							<label for="one" class="radio-label"><span>single</span></label>
+							<label for="one" class="radio-label"><span>single</span></label> /
 						<input type="radio" class="radio" id="two" name="result" value="order">
 							<label for="two" class="radio-label"><span>ordered</span></label>
 					<span id="decision"><button type="button"class="send">DECISION</button></span>
 				</form>
 			</section>
-			
+
 		</div>
 		<section class="list">
 		<ul id="options-list"></ul>
 		</section>
   </section>
-	
+
 	<!--JS-->
 	<!--TEMPLATES-->
 	<script type="text/template" id="display-choices">
-		<span id="count"> Currently   <span id="num"><%= total %></span> <%= total === 1 ? 'option' : 'options' %>
-		</span>
-		<button type="button" class="clear-all">x</button>
+		<span id="count"><%= total %></span>
+		<br>
+		<button type="button" class="clear-all">Clear All</button>
 	</script>
 	<script type="text/template" id="item-view">
 		<div class="view">
-			<label id="value"> 
+			<label id="value">
 				<%= title %>
 			</label>
 			<div class="btns">

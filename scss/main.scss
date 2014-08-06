@@ -89,7 +89,7 @@ header {
 }
 
 form {
-	color:$grey;
+	color:$main-font;
 	display:block;
 	letter-spacing:0.1em;
 }
@@ -110,29 +110,26 @@ form {
 	width:100%;
 }
 
-#num {
-	color:$nice-blue;
-	font-weight:bold;
+#count {
+	font-size:20px;
 }
 
 /**BUTTONS**/
 button.clear-all {
-	@include border-radius(50%);
-	background: $main-font;
-	color: $grey;
-	text-decoration: none;
-	border:none;
+	@include border-radius(20px);
+	margin-top:1%;
+	background: $grey;
+	color: $main-font;
+	border:1px solid $main-font;
 	outline:none;
 	vertical-align:middle;
 	text-align:center;
-	line-height:5px;
 	font-size:13px;
-	font-weight:bold;
-	width:20px;
-	height:20px;
+	text-transform:uppercase;
 }
 
 .clear-all:hover {
+	background:$main-font;
 	color:$nice-blue;
 }
 
@@ -144,9 +141,10 @@ input[type="radio"] {
 	display:none;
 }
 
+/*
 input[type="radio"] + .radio-label:before {
 	@include border-radius(20px);
-	background: $grey;
+	background: $main-font;
 	color: $main-font;
 	content:"";
 	display:inline-block;
@@ -159,48 +157,37 @@ input[type="radio"] + .radio-label:before {
 
 input[type=radio]:checked + label:before {
 	content:"\2022";
-	color:$nice-blue;
+	color:$grey;
 	font-size:20px;
 	font-weight:bold;
 	line-height:0.8em;
 }
+*/
 
 input[type=radio]:checked + label {
-	color:$main-font;
+	color:$grey;
 }
 
 .send {
-	@include border-radius(30px);
-	background: $main-font;
-	color: $grey;
-	padding: 0.4em;
+	@include border-radius(20px);
+	background: $nice-blue;
+	border:2px solid $main-font;
+	color: $main-font;
+	padding: 0.4em 1em;
 	text-decoration: none;
-	border:none;
 	outline:none;
 	vertical-align:middle;
 }
 
-.send:after {
-	@include border-radius(20px);
-	background: $grey;
-	color: $main-font;
-	content: ">";
-	display: inline-block;
-	height: 25px;
-	line-height: 1.5em;
-	margin-left: 0.5em;
-	text-align: center;
-	width: 25px;
-}
-
 .send:hover {
 	color:$nice-blue;
+	background:$main-font;
 }
 
 .send:after:hover {
 	@extend .send:hover;
 }
-	
+
 .btns{
 	margin-top:0px;
 	display:block;
@@ -208,16 +195,17 @@ input[type=radio]:checked + label {
 }
 
 .editbtn {
-	@include border-radius(3px);
+	@include border-radius(5px);
 	font-size:15px;
 	background-color:$nice-blue;
-	border: 0 none;
+	border: 2px solid $nice-blue;
 	margin-top:0px;
 	outline:none;
 }
 
 .editbtn:hover {
-	color:$grey;
+	background:$main-font;
+	color:$nice-blue;
 }
 
 .destroy {
@@ -250,24 +238,24 @@ input[type=radio]:checked + label {
 		padding:0.4em 1em;
 		padding-bottom:0em;
 		word-wrap:break-word;
-		
+
 		.edit {
 			display: none;
 			padding-bottom:0.4em;
 			width:100%;
 			word-wrap:break-word;
 		}
-		
+
 	}
-	
+
 	li.editing .view {
 		display: none;
 	}
-	
+
 	input {
 		font-size:30px;
 	}
-	
+
 }
 
 /***DECISION***/
@@ -287,10 +275,10 @@ input[type=radio]:checked + label {
 #verdict {
 	color:$grey;
 }
-	
+
 /****MEDIA QUERIES****/
 @media (max-width:310px) {
-	
+
 	#icon {
 		width:30%;
 		height:30%;
@@ -304,31 +292,31 @@ input[type=radio]:checked + label {
 		width:80%;
 		margin-bottom:0.5em;
 	}
-	
+
 	#choices, #submitting {
 		font-size:7px;
 	}
-	
+
 	#decision {
 		font-size:10px;
 	}
-	
+
 	.editbtn {
 		font-size:7px;
 	}
-	
+
 	#options-list {
 		li {
 			margin:1em 15%;
 			margin-left:5%;
 			font-size:15px;
 		}
-		
+
 		input {
 			font-size:15px;
 		}
 	}
-	
+
 	.result {
 		font-size:15px;
 	}
@@ -348,31 +336,31 @@ input[type=radio]:checked + label {
 		width:80%;
 		margin-bottom:0.5em;
 	}
-	
+
 	#choices, #submitting {
 		font-size:10px;
 	}
-	
+
 	#decision {
 		font-size:13px;
 	}
-	
+
 	.editbtn {
 		font-size:10px;
 	}
-	
+
 	#options-list {
 		li {
 			margin:1em 15%;
 			margin-left:5%;
 			font-size:20px;
 		}
-		
+
 		input {
 			font-size:20px;
 		}
 	}
-	
+
 	.result {
 		font-size:20px;
 	}
@@ -392,32 +380,32 @@ input[type=radio]:checked + label {
 		width:80%;
 		margin-bottom:0.5em;
 	}
-	
+
 	#decision {
 		font-size:16px;
 	}
-	
+
 	.editbtn {
 		font-size:10px;
 	}
-	
-	
+
+
 	#choices, #submitting {
 		font-size:13px;
 	}
-	
+
 	#options-list {
 		li {
 			margin:1em 15%;
 			margin-left:5%;
 		  font-size:25px;
 		}
-		
+
 		input {
 			font-size:25px;
 		}
 	}
-	
+
 	.result {
 		font-size:25px;
 	}
@@ -438,11 +426,11 @@ input[type=radio]:checked + label {
 		width:80%;
 		margin-bottom:0.5em;
 	}
-	
+
 	#submitting, #choices {
 		font-size:15px;
 	}
-	
+
 	#decision {
 		font-size:16px;
 	}
@@ -454,18 +442,18 @@ input[type=radio]:checked + label {
 			margin-left:9%;
 			font-size:30px;
 		}
-		
+
 		input {
 			font-size:30px;
 		}
 	}
-	
+
 	.result {
 		font-size:30px;
 	}
 }
 
-@media (min-width:1300px){	
+@media (min-width:1300px){
 	#icon {
 		width:20%;
 		height:20%;
@@ -479,15 +467,15 @@ input[type=radio]:checked + label {
 		font-size:55px;
 		margin-bottom:0.5em;
 	}
-	
+
 	#submitting, #choices {
 		font-size:30px;
 	}
-	
+
 	#decision {
 		font-size:30px;
 	}
-	
+
 	.send:after {
 		height: 30px;
 		line-height: 0.8em;
@@ -495,7 +483,7 @@ input[type=radio]:checked + label {
 		text-align: center;
 		width: 25px;
 	}
-	
+
 	.editbtn {
 		font-size:20px;
 	}
@@ -506,18 +494,18 @@ input[type=radio]:checked + label {
 			margin-left:13%;
 			font-size:55px;
 		}
-		
+
 		input {
 			font-size:55px;
 		}
 	}
-	
+
 	.result {
 		font-size:55px;
 	}
-	
+
 	.restart {
 		font-size:30px;
 	}
-	
+
 }
