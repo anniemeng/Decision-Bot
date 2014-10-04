@@ -1,5 +1,4 @@
 #Decision-Bot
-============
 
 Decision generator with animation upon input created in JavaScript.
 
@@ -7,8 +6,8 @@ Decision generator with animation upon input created in JavaScript.
 
 Used: 
 - Backbone.js and Underscore.js 
-- Sass 
-- Illustrator to create the robot  
+- Illustrator (to create the robot)
+- Languages: JS, jQuery, HTML, Sass
 
 Demo(aka write your indecisions away) [here](http://decision-bot.herokuapp.com/)
 
